@@ -1,0 +1,28 @@
+{
+  "name": "jt-jsextension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "testNode": "node --experimental-modules index.mjs",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jetoneDev/jt-jsExtension.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jetoneDev/jt-jsExtension/issues"
+  },
+  "homepage": "https://github.com/jetoneDev/jt-jsExtension#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "power-assert": "^1.6.0"
+  }
+}
