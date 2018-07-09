@@ -9,7 +9,7 @@
   },
   "scripts": {
     "testNode": "node --experimental-modules index.mjs",
-    "test": "mocha"
+    "test": "mocha ./tests"
   },
   "repository": {
     "type": "git",

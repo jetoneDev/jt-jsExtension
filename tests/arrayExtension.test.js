@@ -1,5 +1,5 @@
 const assert = require("assert");
-const arrayExtension = require("../src/lib/arrayExtension");
+const arrayExtension = require("../lib/arrayExtension");
 describe("arrayExtensionTest.js", () => {
   it("groupBy", () => {
     let array = [{
