@@ -30,13 +30,22 @@ describe("sqlTranslatorTest.js", () => {
     console.log(a);
   });
   it("insert into Test", () => {
-    const sql = `insert into table (a,b,c,d)
-        values(@a,@b,@c,@d)
-    `;
+    const sql = `INSERT INTO MaterialSheet (TaskId,Type,CreatorId,CreatorName,Status,CompanyId,Warehouse)
+    VALUES (@TaskId,@Type,@CreatorId,@CreatorName,@Status,@CompanyId,@MaterialWarehouseEngineer)
+    SELECT SCOPE_IDENTITY() AS id `;
     const a = translator.insert(
       sql,
-      [{ l: 5, d: 4, a: 1, c: 3, b: 2 }, { a: 1, l: 5, d: 4, b: 2, c: 3 }]
+      [{
+        TaskId: 1,
+        Type: 2,
+        CreatorId: 3,
+        CreatorName: 4,
+        Status: 5,
+        CompanyId: 6,
+        MaterialWarehouseEngineer: 7,
+      }]
     );
     console.log(a);
   });
+
 });

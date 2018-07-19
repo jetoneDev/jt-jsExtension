@@ -3,28 +3,22 @@
     // 悬停以查看现有属性的描述。
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [{
-            "type": "node",
-            "request": "launch",
-            "name": "test",
-            "runtimeExecutable": "npm",
-            "runtimeArgs": [
-                "test"
-            ],
-            "port": 9229
-        },
+    "configurations": [
         {
-            "type": "chrome",
-            "request": "attach",
-            "name": "Attach to Chrome",
-            "port": 9222,
-            "webRoot": "${workspaceFolder}"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "启动程序",
-            "program": "${workspaceFolder}/index.js"
+        "name": "Run mocha",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+        "stopOnEntry": false,
+        "args": [
+            "./tests",
+            "--debug",
+            "--no-timeouts"
+        ],
+        "cwd": "${workspaceRoot}",
+        "runtimeExecutable": null,
+        "env": {
+            "NODE_ENV": "testing"
         }
-    ]
+    }]
 }
