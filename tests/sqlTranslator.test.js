@@ -15,16 +15,28 @@ describe("sqlTranslatorTest.js", () => {
     });
     console.log("result", a);
   });
-  it("insert into Test", () => {
+  it("insert into aliasList,extraDataList", () => {
     const sql = `insert into table (a,b,c,d,CreatorId,CreatorName)
         values(@a,@b,@c,@d,@CreatorId,@CreatorName)
     `;
     const a = translator.insert(
       sql,
       [{ l: 5, d: 4, a: 1, c: 3, b: 2 }, { a: 1, l: 5, d: 4, b: 2, c: 3 }],
-      {aliasList:{k: "l"},
-      extraDatalist:{CreatorId: 2, CreatorName: "clg"} }
+      {
+        alias: { k: "l" },
+        extraData: { CreatorId: 2, CreatorName: "clg" }
+      }
     );
-    console.log("insert", a);
+    console.log(a);
+  });
+  it("insert into Test", () => {
+    const sql = `insert into table (a,b,c,d)
+        values(@a,@b,@c,@d)
+    `;
+    const a = translator.insert(
+      sql,
+      [{ l: 5, d: 4, a: 1, c: 3, b: 2 }, { a: 1, l: 5, d: 4, b: 2, c: 3 }]
+    );
+    console.log(a);
   });
 });
